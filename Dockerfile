@@ -12,7 +12,7 @@ php7.3-cli php7.3-zip php7.3-soap php7.3-imap nginx mariadb-server openssl
 
 RUN rm -rf /etc/nginx/sites-available/default \
 && rm -rf /etc/nginx/sites-enabled/default \
-&& mkdir -p /var/www/smatha
+&& mkdir -p /var/www/kshantel
 
 RUN chown -R www-data /var/www/* && chmod -R 755 /var/www/*
 
@@ -21,7 +21,7 @@ RUN mkdir /etc/nginx/ssl
 ADD https://files.phpmyadmin.net/phpMyAdmin/5.0.2/phpMyAdmin-5.0.2-all-languages.tar.gz phpmyadmin.tar.gz
 
 RUN tar xvzf phpmyadmin.tar.gz 
-CMD mv phpMyAdmin-5.0.2-all-languages /var/www/kshantel/phpmyadmin
+RUN mv phpMyAdmin-5.0.2-all-languages /var/www/kshantel/phpmyadmin
 RUN mv /usr/share/wordpress /var/www/kshantel
 
 COPY srcs/kshantel.key /etc/nginx/ssl/kshantel.key
