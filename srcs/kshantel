@@ -14,7 +14,7 @@ server{
 	ssl_certificate /etc/nginx/ssl/kshantel.pem;
 	ssl_certificate_key /etc/nginx/ssl/kshantel.key;
 
-	root /var/www/kshantel;
+	root /var/www/html;
 	index index.html index.htm index.php;
 
 	location / {
